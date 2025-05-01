@@ -87,13 +87,13 @@ def plot_charts():
         messagebox.showinfo("No Data", "No sales data to plot.")
         return
 
-    # Quantity Chart
+    
     df.plot(kind='bar', x='product', y='total_quantity', color='skyblue', title='Total Quantity Sold')
     plt.ylabel('Quantity')
     plt.tight_layout()
     plt.show()
 
-    # Revenue Chart
+    
     df.plot(kind='bar', x='product', y='total_revenue', color='orange', title='Total Revenue')
     plt.ylabel('Revenue ($)')
     plt.tight_layout()
@@ -107,7 +107,7 @@ root.title("Sales Summary App")
 root.geometry("600x500")
 root.resizable(False, False)
 
-# Input Frame
+
 input_frame = tk.LabelFrame(root, text="Add New Sale", padx=10, pady=10)
 input_frame.pack(padx=10, pady=10, fill="x")
 
@@ -126,7 +126,7 @@ price_entry.grid(row=2, column=1)
 add_button = tk.Button(input_frame, text="Add Sale", command=insert_sale, bg="#4CAF50", fg="white")
 add_button.grid(row=3, columnspan=2, pady=5)
 
-# Summary Table
+
 summary_frame = tk.LabelFrame(root, text="Sales Summary", padx=10, pady=10)
 summary_frame.pack(padx=10, pady=10, fill="both", expand=True)
 
@@ -136,7 +136,7 @@ summary_table.heading("Quantity", text="Total Quantity")
 summary_table.heading("Revenue", text="Total Revenue")
 summary_table.pack(fill="both", expand=True)
 
-# Chart Button
+
 chart_button = tk.Button(root, text="📊 Show Charts", command=plot_charts, bg="#2196F3", fg="white")
 chart_button.pack(pady=10)
 
